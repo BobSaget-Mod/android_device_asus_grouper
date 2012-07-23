@@ -21,7 +21,7 @@ on init
     # create directory for mounting usb drives
     mkdir /storage/usbdisk 0775 system system
     symlink /storage/usbdisk /mnt/usbdisk
-    symlink /mnt/usbdisk /usbdisk
+    symlink /storage/usbdisk /usbdisk
 
 on fs
     setprop ro.crypto.umount_sd false
