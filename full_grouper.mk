@@ -28,5 +28,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 # Discard inherited values and use our own instead.
 PRODUCT_NAME := full_grouper
 PRODUCT_DEVICE := grouper
-PRODUCT_BRAND := Android
-PRODUCT_MODEL := Full Android on Grouper
+PRODUCT_BRAND := Google
+PRODUCT_MODEL := Nexus 7
+PRODUCT_MANUFACTURER := Asus
+
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=nakasi BUILD_FINGERPRINT="google/nakasi/grouper:4.2.1/JOP40D/533553:user/release-keys" PRIVATE_BUILD_DESC="nakasi-user 4.2.1 JOP40D 533553 release-keys"
+
+# Don't restrict vendor folder
+PRODUCT_RESTRICT_VENDOR_FILES := false

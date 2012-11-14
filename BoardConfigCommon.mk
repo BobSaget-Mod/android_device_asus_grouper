@@ -79,3 +79,6 @@ endif
 NEED_WORKAROUND_CORTEX_A9_745320 := true
 
 BOARD_USES_GROUPER_MODULES := true
+
+# Extra CFLAGS
+TARGET_EXTRA_CFLAGS := $(call cc-option,-mtune=cortex-a9,$(call cc-option,-mcpu=cortex-a9,$(call cc-option,-marm,$(call cc-option,-mfpu=neon))))
