@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2012 The TeamAndroid Project
+# Copyright (C) 2012 The SaberMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -82,7 +82,7 @@ PRODUCT_COPY_FILES += \
 
 # Extra init file
 PRODUCT_COPY_FILES += \
-    device/asus/grouper/system/etc/init.local.rc:root/init.pb.rc
+    device/asus/grouper/system/etc/init.local.rc:root/init.sm.rc
 
 # Don't export PS1 in /system/etc/mkshrc.
 PRODUCT_COPY_FILES += \

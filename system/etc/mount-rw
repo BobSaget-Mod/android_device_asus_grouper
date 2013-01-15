@@ -2,7 +2,7 @@
 #
 # remount system as rw for secure boot images
 #
-# Copyright (C) 2012 The TeamAndroid Project
+# Copyright (C) 2012-2013 The TeamAndroid Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.

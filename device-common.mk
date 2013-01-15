@@ -139,5 +139,5 @@ PRODUCT_COPY_FILES += \
 WIFI_BAND := 802_11_BG
  $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4330/device-bcm.mk)
 
-# Call ta
- $(call inherit-product, device/asus/grouper/ta.mk)
+# Call sm specific stuff
+ $(call inherit-product, device/asus/grouper/sm.mk)
