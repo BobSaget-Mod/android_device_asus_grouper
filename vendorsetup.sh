@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2008 The Android Open Source Project
+# Copyright (C) 2013 The SaberMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,5 +21,5 @@
 # In particular, you can add lunch options with the add_lunch_combo
 # function: add_lunch_combo generic-eng
 
-add_lunch_combo full_grouper-userdebug
-add_lunch_combo full_grouper-user
+add_lunch_combo sm_grouper-userdebug
+add_lunch_combo sm_grouper-user
