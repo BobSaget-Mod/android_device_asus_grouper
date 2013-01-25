@@ -63,6 +63,10 @@ PRODUCT_COPY_FILES += \
     device/asus/grouper/system/media/bootanimations/1.zip:system/media/bootanimations/1.zip \
     device/asus/grouper/system/etc/init.d/04bootanimations:system/etc/init.d/04bootanimations
 
+# zram support
+PRODUCT_COPY_FILES += \
+    device/asus/grouper/system/etc/init.d/01modules:system/etc/init.d/01modules
+
 # sysinit support
 PRODUCT_COPY_FILES += \
     device/asus/grouper/system/bin/sysinit:system/bin/sysinit
