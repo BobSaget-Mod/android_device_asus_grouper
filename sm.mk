@@ -63,9 +63,11 @@ PRODUCT_COPY_FILES += \
     device/asus/grouper/system/media/bootanimations/1.zip:system/media/bootanimations/1.zip \
     device/asus/grouper/system/etc/init.d/04bootanimations:system/etc/init.d/04bootanimations
 
+ifeq ($(USING_BUILD_SCRIPTS),true)
 # zram support
 PRODUCT_COPY_FILES += \
     device/asus/grouper/system/etc/init.d/01modules:system/etc/init.d/01modules
+endif
 
 # sysinit support
 PRODUCT_COPY_FILES += \
@@ -76,9 +78,11 @@ PRODUCT_COPY_FILES += \
     device/asus/grouper/system/etc/mount-rw:system/etc/mount-rw \
     device/asus/grouper/system/etc/mount-ro:system/etc/mount-ro
 
+ifeq ($(USING_BUILD_SCRIPTS),true)
 # kernel modules
 PRODUCT_COPY_FILES += \
     device/asus/grouper/system/lib/modules/zram.ko:system/lib/modules/zram.ko
+endif
 
 # Busybox sync script
 PRODUCT_COPY_FILES += \
