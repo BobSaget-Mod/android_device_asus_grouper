@@ -81,6 +81,36 @@ NEED_WORKAROUND_CORTEX_A9_745320 := true
 BOARD_USES_GROUPER_MODULES := true
 
 ifneq ($(USE_MORE_OPT_FLAGS),yes)
-# Extra CFLAGS
-TARGET_EXTRA_CFLAGS := $(call cc-option,-mtune=cortex-a9,$(call cc-option,-mcpu=cortex-a9,$(call cc-option,-marm,$(call cc-option,-mfpu=neon))))
+  ifneq ($(USE_GNU_ANDROIDEABI),yes)
+
+  # Extra CFLAGS
+  TARGET_EXTRA_CFLAGS :=	$(call-cc-option,-fsanitize=address) \
+				$(call-cc-option,-fsanitize=thread) \
+				$(call-cc-option,-march=armv7-a) \
+				$(call-cc-option,-mcpu=cortex-a9) \
+				$(call-cc-option,-mfpu=neon) \
+				$(call-cc-option,-mtune=cortex-a9) \
+				-fgcse-after-reload \
+				-finline-functions \
+				-fipa-cp-clone \
+				-fpredictive-commoning \
+				-fvect-cost-model
+  # Extra CPPFLAGS
+  TARGET_EXTRA_CPPFLAGS :=	$(call-cpp-option,-fsanitize=address) \
+				$(call-cpp-option,-fsanitize=thread) \
+				$(call-cpp-option,-march=armv7-a) \
+				$(call-cpp-option,-mcpu=cortex-a9) \
+				$(call-cpp-option,-mfpu=neon) \
+				$(call-cpp-option,-mtune=cortex-a9)
+  endif
 endif
+
+# GCC
+ifeq ($(USE_GNU_ARMEABI),true)
+  ARM_EABI_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/android-GNU-toolchain-4.8/bin
+endif
+
+ifeq ($(USE_GNU_ANDROIDEABI),true)
+  ANDROID_EABI_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/android-GNU-toolchain-4.8/bin
+endif
+
