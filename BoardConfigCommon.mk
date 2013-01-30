@@ -105,12 +105,16 @@ ifneq ($(USE_MORE_OPT_FLAGS),yes)
   endif
 endif
 
-# GCC
+# GCC GNU
 ifeq ($(USE_GNU_ARMEABI),true)
   ARM_EABI_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/android-GNU-toolchain-4.8/bin
 endif
-
 ifeq ($(USE_GNU_ANDROIDEABI),true)
   ANDROID_EABI_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/android-GNU-toolchain-4.8/bin
+endif
+
+# GCC Linaro
+ifeq ($(USE_LINARO_ARMEABI),true)
+  ARM_EABI_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/android-linaro-toolchain-4.8/bin
 endif
 
