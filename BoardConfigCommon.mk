@@ -118,3 +118,5 @@ ifeq ($(USE_LINARO_ARMEABI),true)
   ARM_EABI_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/android-linaro-toolchain-4.8/bin
 endif
 
+# bionic 32 byte cache line to indicate to C
+ARCH_ARM_HAVE_32_BYTE_CACHE_LINES := true
