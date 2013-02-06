@@ -246,4 +246,6 @@
         <item>com.google.android.location</item>
     </string-array>
 
+    <!-- Asus dock compatibility disabled by default -->
+    <bool name="config_hasDockBattery">true</bool>
 </resources>
