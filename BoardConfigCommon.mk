@@ -120,3 +120,9 @@ endif
 
 # bionic 32 byte cache line to indicate to C
 ARCH_ARM_HAVE_32_BYTE_CACHE_LINES := true
+
+# Preload bootanimation zip into memory
+TARGET_BOOTANIMATION_PRELOAD := true
+
+# Bootanimation texture cache
+TARGET_BOOTANIMATION_TEXTURE_CACHE := true
