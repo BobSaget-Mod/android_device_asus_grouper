@@ -104,3 +104,6 @@ PRODUCT_COPY_FILES += \
 # Theme support
 PRODUCT_COPY_FILES += \
        device/asus/grouper/system/etc/permissions/com.tmobile.software.themes.xml:system/etc/permissions/com.tmobile.software.themes.xml
+
+# video files and extra camera effects
+$(call inherit-product, frameworks/base/data/videos/VideoPackage2.mk)
