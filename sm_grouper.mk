@@ -38,6 +38,9 @@ PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=nakasi BUILD_FINGERPRINT="google/na
 # Don't restrict vendor folder
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
+# Enable ADB authentication
+PRODUCT_PROPERTY_OVERRIDES += ro.adb.secure=1
+
 # Set SM_BUILDTYPE
 
 PRODUCT_VERSION_MAJOR := 1
