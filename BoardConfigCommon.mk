@@ -103,11 +103,6 @@ TARGET_EXTRA_CPPFLAGS :=	$(call-cpp-option,-fsanitize=address) \
 				$(call-cpp-option,-mtune=cortex-a9)
 endif
 
-# GCC GNU SaberMod toolchain for arm-eabi
-ifeq ($(USE_SABERMOD_ARMEABI),true)
-  ARM_EABI_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/bin
-endif
-
 # bionic 32 byte cache line to indicate to C
 ARCH_ARM_HAVE_32_BYTE_CACHE_LINES := true
 
