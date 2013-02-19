@@ -15,7 +15,6 @@
 #
 # Extra packages
 PRODUCT_PACKAGES += \
-    Apollo \
     bash \
     Basic \
     Camera \
