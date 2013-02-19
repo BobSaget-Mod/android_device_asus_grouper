@@ -90,10 +90,7 @@ TARGET_EXTRA_CFLAGS :=	$(call-cc-option,-fsanitize=address) \
 			$(call-cc-option,-mfpu=neon) \
 			$(call-cc-option,-mtune=cortex-a9) \
 			-fgcse-after-reload \
-			-finline-functions \
-			-fipa-cp-clone \
-			-fpredictive-commoning \
-			-fvect-cost-model
+			-finline-functions
 # Extra CPPFLAGS
 TARGET_EXTRA_CPPFLAGS :=	$(call-cpp-option,-fsanitize=address) \
 				$(call-cpp-option,-fsanitize=thread) \
