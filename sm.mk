@@ -25,6 +25,7 @@ PRODUCT_PACKAGES += \
     DSPManager \
     e2fsck \
     Email \
+    GalleryGoogle-n7 \
     htop \
     LatinIME \
     libcyanogen-dsp \
@@ -54,7 +55,6 @@ PRODUCT_PACKAGES += \
     vim \
     Wallpaperz
 
-$(call inherit-product, vendor/goog/goog-vendor.mk)
 $(call inherit-product, vendor/goomanager/goomanager-vendor.mk)
 $(call inherit-product, vendor/RM/rm-vendor.mk)
 
