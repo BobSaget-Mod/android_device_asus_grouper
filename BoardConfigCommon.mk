@@ -91,6 +91,16 @@ TARGET_EXTRA_CFLAGS :=	$(call-cc-option,-fsanitize=address) \
 			$(call-cc-option,-mtune=cortex-a9) \
 			-fgcse-after-reload \
 			-finline-functions
+
+ifeq ($(ENABLE_GRAPHITE),true)
+# Graphite
+TARGET_EXTRA_CFLAGS +=	-fgraphite-identity \
+			-floop-block \
+			-floop-strip-mine \
+			-ftree-loop-distribution \
+			-ftree-loop-linear
+endif
+
 # Extra CPPFLAGS
 TARGET_EXTRA_CPPFLAGS :=	$(call-cpp-option,-fsanitize=address) \
 				$(call-cpp-option,-fsanitize=thread) \
