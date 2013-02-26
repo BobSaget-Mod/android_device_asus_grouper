@@ -86,26 +86,30 @@ ifneq ($(USE_MORE_OPT_FLAGS),yes)
 TARGET_EXTRA_CFLAGS :=	$(call-cc-option,-fsanitize=address) \
 			$(call-cc-option,-fsanitize=thread) \
 			$(call-cc-option,-march=armv7-a) \
-			$(call-cc-option,-mcpu=cortex-a9) \
 			$(call-cc-option,-mfpu=neon) \
 			$(call-cc-option,-mtune=cortex-a9) \
 			-fgcse-after-reload \
-			-finline-functions
+			-fipa-cp-clone \
+			-fpredictive-commoning \
+			-ftree-vectorize \
+			-funswitch-loops \
+			-fvect-cost-model
 
 ifeq ($(ENABLE_GRAPHITE),true)
 # Graphite
-TARGET_EXTRA_CFLAGS +=	-fgraphite-identity \
+TARGET_EXTRA_CFLAGS +=	-fgraphite \
+			-fgraphite-identity \
 			-floop-block \
+			-floop-flatten \
+			-floop-interchange \
 			-floop-strip-mine \
+			-floop-parallelize-all \
 			-ftree-loop-distribution \
 			-ftree-loop-linear
 endif
 
 # Extra CPPFLAGS
-TARGET_EXTRA_CPPFLAGS :=	$(call-cpp-option,-fsanitize=address) \
-				$(call-cpp-option,-fsanitize=thread) \
-				$(call-cpp-option,-march=armv7-a) \
-				$(call-cpp-option,-mcpu=cortex-a9) \
+TARGET_EXTRA_CPPFLAGS :=	$(call-cpp-option,-march=armv7-a) \
 				$(call-cpp-option,-mfpu=neon) \
 				$(call-cpp-option,-mtune=cortex-a9)
 endif
