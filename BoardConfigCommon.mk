@@ -89,11 +89,15 @@ TARGET_EXTRA_CFLAGS :=	$(call-cc-option,-fsanitize=address) \
 			$(call-cc-option,-mfpu=neon) \
 			$(call-cc-option,-mtune=cortex-a9) \
 			-fgcse-after-reload \
+			-fgcse-sm \
 			-fipa-cp-clone \
 			-fpredictive-commoning \
+			-fsched-spec-load \
+			-fsingle-precision-constant \
 			-ftree-vectorize \
 			-funswitch-loops \
-			-fvect-cost-model
+			-fvect-cost-model \
+			-mvectorize-with-neon-quad
 
 ifeq ($(ENABLE_GRAPHITE),true)
 # Graphite
@@ -109,9 +113,21 @@ TARGET_EXTRA_CFLAGS +=	-fgraphite \
 endif
 
 # Extra CPPFLAGS
-TARGET_EXTRA_CPPFLAGS :=	$(call-cpp-option,-march=armv7-a) \
-				$(call-cpp-option,-mfpu=neon) \
-				$(call-cpp-option,-mtune=cortex-a9)
+TARGET_EXTRA_CPPFLAGS :=	$(call-cc-option,-fsanitize=address) \
+				$(call-cc-option,-fsanitize=thread) \
+				$(call-cc-option,-march=armv7-a) \
+				$(call-cc-option,-mfpu=neon) \
+				$(call-cc-option,-mtune=cortex-a9) \
+				-fgcse-after-reload \
+				-fgcse-sm \
+				-fipa-cp-clone \
+				-fpredictive-commoning \
+				-fsched-spec-load \
+				-fsingle-precision-constant \
+				-ftree-vectorize \
+				-funswitch-loops \
+				-fvect-cost-model \
+				-mvectorize-with-neon-quad
 endif
 
 # bionic 32 byte cache line to indicate to C
