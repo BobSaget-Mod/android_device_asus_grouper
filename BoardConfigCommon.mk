@@ -141,3 +141,6 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 
 # Disable c++11 mode
 DEBUG_NO_STDCXX11 := yes
+
+# Use SaberMod GCC 4.8 toolchain
+USE_SABERMOD_ANDROIDEABI_48 := true
