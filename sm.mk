@@ -32,6 +32,8 @@ PRODUCT_PACKAGES += \
     libjackpal-androidterm4 \
     lsof \
     mke2fs \
+    Music \
+    MusicFX \
     nano \
     openvpn \
     powertop \
