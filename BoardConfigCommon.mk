@@ -99,19 +99,6 @@ TARGET_EXTRA_CFLAGS :=	$(call-cc-option,-fsanitize=address) \
 			-fvect-cost-model \
 			-mvectorize-with-neon-quad
 
-ifeq ($(ENABLE_GRAPHITE),true)
-# Graphite
-TARGET_EXTRA_CFLAGS +=	-fgraphite \
-			-fgraphite-identity \
-			-floop-block \
-			-floop-flatten \
-			-floop-interchange \
-			-floop-strip-mine \
-			-floop-parallelize-all \
-			-ftree-loop-distribution \
-			-ftree-loop-linear
-endif
-
 # Extra CPPFLAGS
 TARGET_EXTRA_CPPFLAGS :=	$(call-cc-option,-fsanitize=address) \
 				$(call-cc-option,-fsanitize=thread) \
