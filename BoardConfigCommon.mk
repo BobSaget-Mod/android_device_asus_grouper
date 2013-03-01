@@ -93,7 +93,6 @@ TARGET_EXTRA_CFLAGS :=	$(call-cc-option,-fsanitize=address) \
 			-fipa-cp-clone \
 			-fpredictive-commoning \
 			-fsched-spec-load \
-			-fsingle-precision-constant \
 			-ftree-vectorize \
 			-funswitch-loops \
 			-fvect-cost-model \
