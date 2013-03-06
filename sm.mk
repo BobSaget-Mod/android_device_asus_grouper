@@ -83,7 +83,8 @@ PRODUCT_COPY_FILES += \
 ifeq ($(USING_BUILD_SCRIPTS),true)
 # kernel modules
 PRODUCT_COPY_FILES += \
-    device/asus/grouper/system/lib/modules/zram.ko:system/lib/modules/zram.ko
+    device/asus/grouper/system/lib/modules/zram.ko:system/lib/modules/zram.ko \
+    device/asus/grouper/system/lib/modules/cifs.ko:system/lib/modules/cifs.ko
 endif
 
 # Busybox sync script
