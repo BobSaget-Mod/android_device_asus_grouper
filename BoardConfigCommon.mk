@@ -80,24 +80,31 @@ NEED_WORKAROUND_CORTEX_A9_745320 := true
 
 BOARD_USES_GROUPER_MODULES := true
 
-ifneq ($(USE_MORE_OPT_FLAGS),yes)
-
 # Extra CFLAGS
-TARGET_EXTRA_CFLAGS :=	$(call-cc-option,-fsanitize=address) \
-			$(call-cc-option,-fsanitize=thread) \
-			$(call-cc-option,-march=armv7-a) \
-			$(call-cc-option,-mfpu=neon) \
-			$(call-cc-option,-mtune=cortex-a9) \
-			-fgcse-after-reload \
-			-fgcse-sm \
+TARGET_EXTRA_CFLAGS :=	-march=armv7-a \
+			-mfpu=neon \
+			-mtune=cortex-a9
+ifneq ($(USE_MORE_OPT_FLAGS),yes)
+# Extra CFLAGS
+TARGET_EXTRA_CFLAGS +=  -fgcse-after-reload \
 			-fipa-cp-clone \
 			-fpredictive-commoning \
 			-fsched-spec-load \
-			-fsingle-precision-constant \
-			-ftree-vectorize \
 			-funswitch-loops \
-			-fvect-cost-model \
-			-mvectorize-with-neon-quad
+			-fvect-cost-model
+endif
+
+ifeq ($(ENABLE_GRAPHITE),true)
+# Graphite
+TARGET_EXTRA_CFLAGS +=	-fgraphite \
+			-fgraphite-identity \
+			-floop-block \
+			-floop-flatten \
+			-floop-interchange \
+			-floop-strip-mine \
+			-floop-parallelize-all \
+			-ftree-loop-distribution \
+			-ftree-loop-linear
 endif
 
 # bionic 32 byte cache line to indicate to C

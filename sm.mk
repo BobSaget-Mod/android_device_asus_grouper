@@ -41,7 +41,6 @@ PRODUCT_PACKAGES += \
     scp \
     sftp \
     SoundRecorder \
-    SpareParts \
     ssh \
     sshd \
     sshd_config \
@@ -66,12 +65,6 @@ PRODUCT_COPY_FILES += \
     device/asus/grouper/system/media/bootanimations/1.zip:system/media/bootanimations/1.zip \
     device/asus/grouper/system/etc/init.d/04bootanimations:system/etc/init.d/04bootanimations
 
-ifeq ($(USING_BUILD_SCRIPTS),true)
-# zram support
-PRODUCT_COPY_FILES += \
-    device/asus/grouper/system/etc/init.d/01modules:system/etc/init.d/01modules
-endif
-
 # sysinit support
 PRODUCT_COPY_FILES += \
     device/asus/grouper/system/bin/sysinit:system/bin/sysinit
@@ -84,7 +77,7 @@ PRODUCT_COPY_FILES += \
 ifeq ($(USING_BUILD_SCRIPTS),true)
 # kernel modules
 PRODUCT_COPY_FILES += \
-    device/asus/grouper/system/lib/modules/zram.ko:system/lib/modules/zram.ko
+    device/asus/grouper/system/lib/modules/cifs.ko:system/lib/modules/cifs.ko
 endif
 
 # Busybox sync script
