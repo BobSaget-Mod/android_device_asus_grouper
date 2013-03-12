@@ -81,31 +81,7 @@ NEED_WORKAROUND_CORTEX_A9_745320 := true
 BOARD_USES_GROUPER_MODULES := true
 
 # Extra CFLAGS
-TARGET_EXTRA_CFLAGS :=	-march=armv7-a \
-			-mfpu=neon \
-			-mtune=cortex-a9
-ifneq ($(USE_MORE_OPT_FLAGS),yes)
-# Extra CFLAGS
-TARGET_EXTRA_CFLAGS +=  -fgcse-after-reload \
-			-fipa-cp-clone \
-			-fpredictive-commoning \
-			-fsched-spec-load \
-			-funswitch-loops \
-			-fvect-cost-model
-endif
-
-ifeq ($(ENABLE_GRAPHITE),true)
-# Graphite
-TARGET_EXTRA_CFLAGS +=	-fgraphite \
-			-fgraphite-identity \
-			-floop-block \
-			-floop-flatten \
-			-floop-interchange \
-			-floop-strip-mine \
-			-floop-parallelize-all \
-			-ftree-loop-distribution \
-			-ftree-loop-linear
-endif
+TARGET_EXTRA_CFLAGS :=	$(call-cc-option,-mfpu=neon) $(call-cc-option,-mfloat-abi=softfp) $(call-cc-option,-march=armv7-a) $(call-cc-option-mtune=cortex-a9)
 
 # bionic 32 byte cache line to indicate to C
 ARCH_ARM_HAVE_32_BYTE_CACHE_LINES := true
