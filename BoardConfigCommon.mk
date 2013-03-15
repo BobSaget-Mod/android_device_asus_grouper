@@ -97,3 +97,6 @@ DEBUG_NO_STDCXX11 := yes
 
 # Use SaberMod GCC 4.8 toolchain
 USE_SABERMOD_ANDROIDEABI_48 := true
+
+# Embed superuser into system settings
+SUPERUSER_EMBEDDED := true
