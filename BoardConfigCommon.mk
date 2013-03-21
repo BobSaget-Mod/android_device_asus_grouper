@@ -29,6 +29,8 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/asus/grouper/bluetooth
 TARGET_BOARD_PLATFORM := tegra3
 TARGET_TEGRA_VERSION := t30
 
+TARGET_GLOBAL_CFLAGS += $(call cc-option,-mfpu=neon) $(call cc-option,-mfloat-abi=softfp)
+TARGET_GLOBAL_CPPFLAGS += $(call cpp-option,-mfpu=neon) $(call cpp-option,-mfloat-abi=softfp)
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
