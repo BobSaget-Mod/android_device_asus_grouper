@@ -101,3 +101,12 @@ PRODUCT_COPY_FILES += \
 
 # video files and extra camera effects
 $(call inherit-product, frameworks/base/data/videos/VideoPackage2.mk)
+
+### SaberMod LCD density scripts ###
+# Copy the user interface bash script
+PRODUCT_COPY_FILES += \
+       device/asus/grouper/system/scripts/sm-lcd:system/scripts/sm-lcd
+# Copy the init.d scripts
+PRODUCT_COPY_FILES += \
+       device/asus/grouper/system/etc/init.d/05sm-lcd:system/etc/init.d/05sm-lcd \
+       device/asus/grouper/system/etc/init.d/06tmp-lcd:system/etc/init.d/06tmp-lcd
