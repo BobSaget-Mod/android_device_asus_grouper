@@ -15,6 +15,9 @@
 # limitations under the License.
 # Scirpt by Paul Beeler (SparksCo)
 # Check if this is a fresh ROM flash to run a one time check of LCD density
+# export scirpts directory PATH
+export PATH=$PATH:/system/scripts
+
 if [ -e /system/etc/init.d/06tmp-lcd ];
 then
     # Run the check of LCD density
