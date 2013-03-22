@@ -19,7 +19,6 @@ PRODUCT_PACKAGES += \
     Basic \
     Camera \
     CMFileManager \
-    CMFileManagerThemes \
     com.tmobile.themes \
     Development \
     DSPManager \
