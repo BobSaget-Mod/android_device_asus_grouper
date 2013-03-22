@@ -110,3 +110,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
        device/asus/grouper/system/etc/init.d/05sm-lcd:system/etc/init.d/05sm-lcd \
        device/asus/grouper/system/etc/init.d/06tmp-lcd:system/etc/init.d/06tmp-lcd
+
+# SaberMod banner
+PRODUCT_COPY_FILES += \
+       device/asus/grouper/system/etc/init.d/00banner:system/etc/init.d/00banner
