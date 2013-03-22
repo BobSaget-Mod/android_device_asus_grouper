@@ -18,7 +18,7 @@
 LOG=/data/logd/lcd-density.log
 if [ -e $LOG ];
 then
-    if [[ "$(cat $LOG" == "183" ]];
+    if [[ `cat $LOG` == "183" ]];
     then
         # Set system to read/write access
         bash /etc/mount-rw
