@@ -23,7 +23,6 @@ PRODUCT_PACKAGES += \
     Development \
     DSPManager \
     e2fsck \
-    Email \
     GalleryGoogle-n7 \
     htop \
     LatinIME \
