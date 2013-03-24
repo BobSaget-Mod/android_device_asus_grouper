@@ -16,12 +16,6 @@
 # Scirpt by Paul Beeler (SparksCo)
 
 # Check if logd directory exsist
-if [ -d /data/logd ];
-then
-    echo ""
-else
-    mkdir /data/logd
-fi
 
 getbuildprop () {
     if [ -f /system/build.prop ];
@@ -50,7 +44,6 @@ then
         sed -i 's/ro.sf.lcd_density=213//g' /system/build.prop
         echo "ro.sf.lcd_density=183" >> /system/build.prop
         echo ""
-        echo "183" > /data/logd/lcd-density.log
         echo "All finished, your Nexus will now reboot to apply changes in 10 seconds unless you close this window"
         # set system back to read only access
         bash /etc/mount-ro
@@ -76,7 +69,6 @@ else
             sed -i 's/ro.sf.lcd_density=183//g' /system/build.prop
             echo "ro.sf.lcd_density=213" >> /system/build.prop
             echo ""
-            echo "213" > /data/logd/lcd-density.log
             echo "All finished, your Nexus will now reboot to apply changes in 10 seconds unless you close this window"
             # set system back to read only access
             bash /etc/mount-ro
@@ -101,7 +93,6 @@ else
             sed -i 's/ro.sf.lcd_density=*//g' /system/build.prop
             echo "ro.sf.lcd_density=213" >> /system/build.prop
             echo ""
-            echo "213" > /data/logd/lcd-density.log
             echo "All finished, your Nexus will now reboot to apply changes in 10 seconds unless you close this window"
             # set system back to read only access
             bash /etc/mount-ro
@@ -115,7 +106,6 @@ else
             sed -i 's/ro.sf.lcd_density=*//g' /system/build.prop
             echo "ro.sf.lcd_density=183" >> /system/build.prop
             echo ""
-            echo "183" > /data/logd/lcd-density.log
             echo "All finished, your Nexus will now reboot to apply changes in 10 seconds unless you close this window"
             # set system back to read only access
             bash /etc/mount-ro
