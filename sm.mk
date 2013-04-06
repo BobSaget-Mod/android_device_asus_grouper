@@ -52,7 +52,7 @@ PRODUCT_PACKAGES += \
     tune2fs \
     VideoEditor \
     vim \
-    Wallpaperz
+    WallpaperZ
 
 $(call inherit-product, vendor/goomanager/goomanager-vendor.mk)
 $(call inherit-product, vendor/RM/rm-vendor.mk)
