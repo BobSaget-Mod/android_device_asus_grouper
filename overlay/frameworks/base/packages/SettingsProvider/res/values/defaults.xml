@@ -21,9 +21,4 @@
     <integer name="def_screen_off_timeout">120000</integer>
     <!-- Set the automatic brightness mode on by default -->
     <bool name="def_screen_brightness_automatic_mode">true</bool>
-    <!-- Default dock sounds enabled = 0 disabled = 0 -->
-    <integer name="def_dock_sounds_enabled">1</integer>
-    <!-- Backup transport Service -->
-    <bool name="def_backup_enabled">true</bool>
-    <string name="def_backup_transport">com.google.android.backup/.BackupTransportService</string>
 </resources>
