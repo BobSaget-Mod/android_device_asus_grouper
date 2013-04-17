@@ -29,6 +29,8 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/asus/grouper/bluetooth
 TARGET_BOARD_PLATFORM := tegra3
 TARGET_TEGRA_VERSION := t30
 
+TARGET_GLOBAL_CFLAGS += $(call cc-option,-mfpu=neon) $(call cc-option,-mfloat-abi=softfp)
+TARGET_GLOBAL_CPPFLAGS += $(call cpp-option,-mfpu=neon) $(call cpp-option,-mfloat-abi=softfp)
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
@@ -80,23 +82,5 @@ NEED_WORKAROUND_CORTEX_A9_745320 := true
 
 BOARD_USES_GROUPER_MODULES := true
 
-# Extra CFLAGS
-TARGET_EXTRA_CFLAGS :=	$(call-cc-option,-mfpu=neon) $(call-cc-option,-mfloat-abi=softfp) $(call-cc-option,-march=armv7-a) $(call-cc-option-mtune=cortex-a9)
-
-# bionic 32 byte cache line to indicate to C
-ARCH_ARM_HAVE_32_BYTE_CACHE_LINES := true
-
-# Preload bootanimation zip into memory
-TARGET_BOOTANIMATION_PRELOAD := true
-
-# Bootanimation texture cache
-TARGET_BOOTANIMATION_TEXTURE_CACHE := true
-
-# Disable c++11 mode
-DEBUG_NO_STDCXX11 := yes
-
 # Use SaberMod GCC 4.8 toolchain
 USE_SABERMOD_ANDROIDEABI_48 := true
-
-# Embed superuser into system settings
-SUPERUSER_EMBEDDED := true
