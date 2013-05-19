@@ -17,11 +17,6 @@ on init
     symlink /storage/emulated/legacy /mnt/sdcard
     symlink /storage/emulated/legacy /storage/sdcard0
     symlink /mnt/shell/emulated/0 /storage/emulated/legacy
-    
-    # create directory for mounting usb drives
-    mkdir /storage/usbdisk 0775 system system
-    symlink /storage/usbdisk /mnt/usbdisk
-    symlink /storage/usbdisk /usbdisk
 
 on fs
     setprop ro.crypto.umount_sd false
