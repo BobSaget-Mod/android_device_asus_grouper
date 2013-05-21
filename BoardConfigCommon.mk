@@ -80,3 +80,6 @@ endif
 NEED_WORKAROUND_CORTEX_A9_745320 := true
 
 BOARD_USES_GROUPER_MODULES := true
+
+# Support WebGL in WebKit
+ENABLE_WEBGL := true
