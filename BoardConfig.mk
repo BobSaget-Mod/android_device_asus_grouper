@@ -40,3 +40,21 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/asus/grouper
 -include vendor/asus/grouper/BoardConfigVendor.mk
 -include vendor/unknown/BoardConfigVendor.mk
 include device/asus/grouper/BoardConfigCommon.mk
+
+BOARD_SEPOLICY_DIRS := \
+        device/asus/grouper/sepolicy
+
+BOARD_SEPOLICY_UNION := \
+        file_contexts \
+        genfs_contexts \
+        app.te \
+        btmacreader.te \
+        device.te \
+        drmserver.te \
+        file.te \
+        mediaserver.te \
+        sensors_config.te \
+        shell.te \
+        surfaceflinger.te \
+        system.te \
+        zygote.te
